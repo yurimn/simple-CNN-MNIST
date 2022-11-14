@@ -3,11 +3,11 @@
 MNIST data accuracy 0.99 넘기기!
 layer 3개 CNN 사용해서 성공
 
-# About CNN : Convolutional Neural Networks (CNN) 요약 정리
+---
+
+## About CNN : Convolutional Neural Networks (CNN) 요약 정리
 
 원문 link : [https://cs231n.github.io/convolutional-networks/#architectures](https://cs231n.github.io/convolutional-networks/#architectures)
-
----
 
 CNN, Convnet 이라고도 불림. Convolutional Neural networks의 줄임말.
 
@@ -55,10 +55,6 @@ Conv layer는 Convolutional Netwrok를 구현하기 위한 가장 핵심이라�
 
 뉴런의 receptive field라고 불리는 hyperparameter가 연결의 크기 정도라고 생각하면 된다. filter size와 같은 의미이다. 이 크기의 depth는 입력의 depth 크기와 동일하다. convolution layer는 이차원이지만, depth까지 곱한 값과 같은 connections를갖는다고 생각하면 된다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fcf8c914-d035-4667-8554-135642d335eb/Untitled.png)
-
-위의 그림에서, 붉은색은 input, 푸른색은 convolution layer를 거친 모습이다. 5개의 filter를 사용했고, 이 다섯개의 뉴런들이 같은 input data에 해당되는 공간에 있는 것 처럼 보이지만, 모두 같은 wieght가 아니다.
-
 **Spatial arrangement**
 
 여기까지 conv layer에서의 input 공간으로 부터의 뉴런의 연결에 대해 설명했지만, 얼마나 많은 뉴런이 output 공간에 있고 어떻게 배열되는지는 설명하지 않았다. output volume을 조절하기 위해서는 depth, stride, zero-padding의 세 가지 hyperparameter가 필요하다.
@@ -90,8 +86,6 @@ parameter sharing scheme는 파라미터의 개수를 조절하기 위해 사용
 ### Pooling Layer
 
 Conv layer 사이에 pooling layer를 삽입한다. overfitting를 컨트롤하고, 크기를 줄이기 위해 사용된다. 가장 흔한 pooling 형태는 MAX operation을 사용해 2\*2의 작은 공간에서부터 최댓값만을 뽑아내는 것이다. 그러면 데이터의 25%를 남기게 된다. 그러나 경우에 따라 pooling은 데이터를 손실하는것이기 때문에 pooling layer 자체를 없애기도 한다.
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/12aacc07-d712-4455-abbb-cb7a9acc1e61/Untitled.png)
 
 ### Fully-Connected Layer
 
